@@ -176,8 +176,8 @@ var maps = {
             'sur-mer|plage'
         ],
         places_string: "communes",
-        background_file: "fr/rivers.geojson",
-        points_file: "fr/points.geojson",
+        background_file: "fr/rivers.json",
+        points_file: "fr/points.json",
         labels_origin: [-5, 46],
         hex_sidelength: 6,
         scale: 4200,
@@ -208,8 +208,8 @@ var maps = {
             'rod$',
         ],
         places_string: "places",
-        points_file: "de/points.geojson",
-        background_file: "de/contour.geojson",
+        points_file: "de/points.topojson",
+        background_file: "de/contour.topojson",
         fill_background: true,
         elevation: true,
         labels_origin: [2, 55],
@@ -227,7 +227,7 @@ var maps = {
             'ton$',
             '^saint'
         ],
-        points_file: "ukie/points.geojson",
+        points_file: "ukie/points.topojson",
         labels_origin: [1, 58],
         hex_sidelength: 5,
         scale: 3500,
@@ -260,8 +260,8 @@ var maps = {
             'pout(ou)?',
             'sur-mer|plage'
         ],
-        background_file: "fr/rivers.geojson",
-        points_file: "frukie/points.geojson",
+        background_file: "fr/rivers.topojson",
+        points_file: "frukie/points.topojson",
         labels_origin: [1, 60],
         hex_sidelength: 4.5,
         scale: 2100,
@@ -275,7 +275,7 @@ var maps = {
         title: "France, Iberian Peninsula and Belgium",
         suggestions: [
         ],
-        points_file: "fribbe/points.geojson",
+        points_file: "fribbe/points.topojson",
         labels_origin: [1, 60],
         hex_sidelength: 6,
         scale: 2600,
@@ -307,8 +307,8 @@ var maps = {
             'ried$',
             'waite$'
         ],
-        background_file: "eu/borders.geojson",
-        points_file: "eu/points.geojson",
+        background_file: "eu/borders.topojson",
+        points_file: "eu/points.topojson",
         labels_origin: [-15, 51],
         hex_sidelength: 5,
         scale: 1600,
@@ -331,8 +331,8 @@ var maps = {
             'burg$',
             'fort'
         ],
-        background_file: "us/borders.geojson",
-        points_file: "us/points.geojson",
+        background_file: "us/borders.topojson",
+        points_file: "us/points.topojson",
         labels_origin: [-76, 34],
         hex_sidelength: 9,
         scale: 1200,
@@ -348,8 +348,8 @@ var maps = {
             'mont',
             'fort'
         ],
-        background_file: "ca/borders.geojson",
-        points_file: "ca/points.geojson",
+        background_file: "ca/borders.topojson",
+        points_file: "ca/points.topojson",
         labels_origin: [-40, 68],
         hex_sidelength: 7,
         scale: 1200,
@@ -363,8 +363,8 @@ var maps = {
         title: "Japan",
         suggestions: [
         ],
-        background_file: "jp/borders.geojson",
-        points_file: "jp/points.geojson",
+        background_file: "jp/borders.topojson",
+        points_file: "jp/points.topojson",
         match_name: function(pattern, element) {
             var japanese_name = element.nameLower.replace(/^(.*) \(.*/, '$1');
             var english_name = element.nameLower.replace(/^(.*) \((.*)\)$/, '$2');
