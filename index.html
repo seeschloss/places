@@ -116,6 +116,22 @@ label {
 }
 
 </style>
+
+<title>Placename patterns using regular expressions.</title>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@badaseong" />
+
+<meta property="og:site_name" content="Ssz.fr">
+<meta property="og:url" content="https://ssz.fr/places">
+<meta property="og:title" content="Placename patterns using regular expressions." />
+<meta property="og:image" content="http://render.sauf.ca/places" />
+<meta property="og:image:height" content="768" />
+<meta property="og:image:width"  content="1024" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:description" content="A visualization of placename patterns using regular expressions." />
+<meta name="description"        content="A visualization of placename patterns using regular expressions." />
+
 </head>
 <body>
 <input class="pattern pattern1" type="text" name="pattern1" placeholder="Pattern" list="patterns" />
@@ -151,6 +167,7 @@ label {
 <script src="d3.hexbin.v0.min.js"></script>
 <script src="queue.v1.min.js"></script>
 <script src="jquery-1.9.1.min.js"></script>
+<script src="../francedom/francedom.js"></script>
 <script>
 var maps = {
     fr: {
@@ -176,15 +193,13 @@ var maps = {
             'sur-mer|plage'
         ],
         places_string: "communes",
-        background_file: "fr/rivers.json",
-        points_file: "fr/points.json",
-        labels_origin: [-5, 46],
+        background_file: "fr/borders.topojson",
+        points_file: "fr/points.topojson",
+        labels_origin: [-10, 46],
         hex_sidelength: 6,
-        scale: 4200,
-        projection: d3.geo.albers()
-            .center([0, 46.5])
-            .rotate([-2, 0])
-            .parallels([40, 50])
+        scale: 4000,
+        projection: d3.geo.franceDom()
+			.showPolynesie(true)
     },
     de: {
         id: "de",
@@ -453,6 +468,7 @@ var patterns = ["", "", ""];
 
 var patterns_from_location = function() {
     var patterns = document.location.hash.substr(1).split('/');
+    patterns = patterns.map(function(p) {return decodeURIComponent(p);});
     while (patterns.length < 3) {patterns.push("");}
     return patterns;
 };
