@@ -493,7 +493,7 @@ var color = function(hexbin) {
 
     hexbin.title = [];
 
-    var match = settings.match_name ? settings.match_name : function(pattern, element) {return element.nameLower.match(pattern);};
+    var match = settings.match_name ? settings.match_name : function(pattern, element) {return element.nameLower.match(pattern.toLowerCase());};
 
     var matches = false;
     hexbin.forEach(function(element, index) {
